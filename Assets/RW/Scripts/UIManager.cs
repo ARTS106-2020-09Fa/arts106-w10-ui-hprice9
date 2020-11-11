@@ -35,3 +35,30 @@ public void OpenSettings()
     settingsButton.SetBool("isHidden", false);
     dialog.SetBool("isHidden", true);
 }
+public Animator contentPanel;
+public void ToggleMenu()
+{
+    bool isHidden = contentPanel.GetBool("isHidden");
+    contentPanel.SetBool("isHidden", !isHidden);
+}
+public Animator gearImage;
+public void ToggleMenu()
+{
+    //..skipped..
+
+    gearImage.SetBool("isHidden", !isHidden);
+}using UnityEngine.UI;
+public Text coinsLabel;
+coinsLabel.text = coins.ToString();
+public GameObject restartDialog;
+restartDialog.SetActive(false);
+restartDialog.SetActive(true);
+public void RestartGame()
+{
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+}
+
+public void ExitToMenu()
+{
+    SceneManager.LoadScene("MenuScene");
+}
